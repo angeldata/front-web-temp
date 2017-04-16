@@ -1,0 +1,19 @@
+webfont($family, $f, $weight = normal) {
+
+    font-url($folder) { // 
+        return '../fonts/' + $folder //return font folder
+    }
+
+    @font-face {
+        font-family: $family
+        src: url(font-url($f + '/' + $f + '.eot'))
+        src: url(font-url($f + '/' + $f + '.eot?#iefix')) format('embedded-opentype'),
+        url(font-url($f + '/' + $f + '.woff')) format('woff'),
+        url(font-url($f + '/' + $f + '.woff2')) format('woff2'),
+        url(font-url($f + '/' + $f + '.ttf')) format('truetype'),
+        url(font-url($f + '/' + $f + '.svg#'+ $family)) format('svg')
+        font-weight: $weight
+        font-style: normal
+    }
+
+}
